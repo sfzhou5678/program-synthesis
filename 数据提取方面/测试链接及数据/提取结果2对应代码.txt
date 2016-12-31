@@ -1,0 +1,69 @@
+﻿<struct name="GreenLabel" nullable="false" reference="">
+<SequenceProgram symbol="outputSequence" data="66356792-868687842"><![CDATA[
+StartSeqBasedRegionSequence(
+StartToPosRegion(
+s,
+ RegexPosition(
+s,
+ RegexPair(
+"Line Separator◦\"                </div>\"",
+ "Line Separator")
+,
+ 1)
+)
+,
+ StartPosSplitRegionSequence(
+v,
+ PosInLinePositionSequence(
+AbsolutePosition(
+s,
+ 1)
+,
+ let inputStr = v in 
+FilterIntLineSequence(
+(0, 1),
+ FilterBoolLineSquence(
+StartsWith(
+s,
+ "Left-than◦Alphanumeric")
+,
+ SplitLines(inputStr))
+)
+)
+)
+)
+]]></SequenceProgram>
+<sequence name="BlueLabel-seq" nullable="true" reference="GreenLabel">
+<program data=""><![CDATA[
+ ]]></program>
+<field name="BlueLabel" nullable="true" reference="GreenLabel">
+<SequenceProgram symbol="outputSequence" data="31409053-2106696558"><![CDATA[
+EndSeqBasedRegionSequence(
+PosToEndRegion(
+s,
+ RegexPosition(
+s,
+ RegexPair(
+"Greater-than",
+ "ε")
+,
+ -1)
+)
+,
+ EndPosSplitRegionSequence(
+v,
+ FilterIntPositionSequence(
+(0, 1),
+ RegexPairPositionSequence(
+v,
+ RegexPair(
+"ε",
+ "\"</span>\"")
+)
+)
+)
+)
+]]></SequenceProgram>
+</field>
+</sequence>
+</struct>
