@@ -48,7 +48,18 @@
 
 ### 二、核心思想
 
-1. 提取行特征的方法
+1. 提取dynamicToken的方法
+
+   比较几个examples截断处(选出区域)前后的数据，找到共同字串作为dynamicTok，如：
+
+   <tr><td>**Russell Smith**</td><td>Russell.Smith@contoso.com</td><td>London</td></tr>
+   <tr><td>**David Jones**</td><td>David.Jones@contoso.com</td><td>Manchester</td></tr>
+
+   提取出Russell Smith和David Jones，那么两个reion的前共同字串为<tr><td>，后共同字串为</td><td>，可以把这两个当作dynamicTok
+
+   PS: 那能不能考虑直接提取两个region之间相似的区域作为dynamicTok？
+
+2. 提取行特征的方法
 
    定位某个line的方法有: 
 
@@ -73,7 +84,6 @@
    > **positiveExamples**由用户输入，**negativeExamples**为positiveExamples之前的所有行。
    >
    > 上面求得的exp必须满足positive和negative两种examples。
-
 
 1. xxx
 
